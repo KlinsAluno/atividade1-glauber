@@ -1,6 +1,6 @@
 import { StatusBar } from "expo-status-bar";
 import React, { useState } from "react";
-import { View, StyleSheet, Text } from "react-native";
+import { Button, View, StyleSheet, Text } from "react-native";
 
 const Campus = (props) => {
   return (
@@ -53,4 +53,20 @@ const styles = StyleSheet.create({
   },
 });
 
-export default App1;
+const App2 = () => {
+  const [cliques, setCliques] = useState(0);
+
+  return (
+    <View style={styles.container}>
+      <Button
+        title="OK"
+        onPress={() => {
+          setCliques(cliques + 1);
+        }}
+      />
+      <Text>Quantidade de Cliques: {cliques}</Text>
+    </View>
+  );
+};
+
+export default App2;
