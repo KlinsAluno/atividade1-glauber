@@ -1,5 +1,5 @@
 import { StatusBar } from "expo-status-bar";
-import React from "react";
+import React, { useState } from "react";
 import { View, StyleSheet, Text } from "react-native";
 
 const Campus = (props) => {
@@ -18,14 +18,19 @@ const InstitutoFederal = (props) => {
   );
 };
 
-const App1 = (View, StyleSheet) => {
+const App1 = () => {
   return (
     <View style={styles.container}>
-      <InstitutoFederal sigla="IFAL" uf="AL" />
+      <Text style={styles.textTotal}>
+        <InstitutoFederal sigla="IFAL" uf="AL" />
+      </Text>
       <Campus nome="Macéio" anoFundacao={1909} />
       <Campus nome="Rio Largo" anoFundacao={2014} />
       <Campus nome="Satuba" anoFundacao={1905} />
-      <InstitutoFederal sigla="IFPE" uf="PE" />
+      <Campus nome="Eden" anoFundacao={100} />
+      <Text style={styles.textTotal}>
+        <InstitutoFederal sigla="IFPE" uf="PE" />
+      </Text>
       <Campus nome="IFAL" anoFundacao={2014} />
       <Campus nome="IFAL" anoFundacao={2010} />
 
@@ -33,5 +38,19 @@ const App1 = (View, StyleSheet) => {
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    padding: 24,
+    backgroundColor: "#9999cc",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+
+  textTotal: {
+    fontSize: 17,
+  },
+});
 
 export default App1;
