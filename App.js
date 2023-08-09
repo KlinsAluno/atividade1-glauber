@@ -1,20 +1,37 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StatusBar } from "expo-status-bar";
+import React from "react";
+import { View, StyleSheet, Text } from "react-native";
 
-export default function App() {
+const Campus = (props) => {
+  return (
+    <Text>
+      O campus {props.nome} foi fundado em {props.anoFundacao}.
+    </Text>
+  );
+};
+
+const InstitutoFederal = (props) => {
+  return (
+    <Text>
+      {props.sigla} - {props.uf}.
+    </Text>
+  );
+};
+
+const App1 = (View, StyleSheet) => {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+      <InstitutoFederal sigla="IFAL" uf="AL" />
+      <Campus nome="Macéio" anoFundacao={1909} />
+      <Campus nome="Rio Largo" anoFundacao={2014} />
+      <Campus nome="Satuba" anoFundacao={1905} />
+      <InstitutoFederal sigla="IFPE" uf="PE" />
+      <Campus nome="IFAL" anoFundacao={2014} />
+      <Campus nome="IFAL" anoFundacao={2010} />
+
       <StatusBar style="auto" />
     </View>
   );
-}
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App1;
