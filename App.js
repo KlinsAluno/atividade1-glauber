@@ -50,6 +50,7 @@ const styles = StyleSheet.create({
 
   textTotal: {
     fontSize: 17,
+    color: "white",
   },
 });
 
@@ -64,9 +65,9 @@ const App2 = () => {
           setCliques(cliques + 1);
         }}
       />
-      <Text>Quantidade de Cliques: {cliques}</Text>
+      <Text style={styles.textTotal}>Quantidade de Cliques: {cliques}</Text>
     </View>
   );
 };
 
-export default App2;
+export default App1;
