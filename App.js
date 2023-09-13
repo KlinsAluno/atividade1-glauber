@@ -1,41 +1,118 @@
 import { StatusBar } from "expo-status-bar";
 import React, { useState } from "react";
 import { Button, View, StyleSheet, Text } from "react-native";
+import { Avatar, Badge } from "react-native-paper";
 
-const Flex = () => {
+const Whatsap = () => {
   return (
-    <View
-      style={[
-        styles.container,
-        {
-          // Try setting `flexDirection` to `"row"`.
-          flexDirection: "column",
-        },
-      ]}
-    >
-      <View
-        style={{
-          flex: 0.15,
-          backgroundColor: "#228B22",
-          flexDirection: "row",
-          justifyContent: "space-evenly",
-          alignItems: "flex-end",
-        }}
-      >
-        <Text style={{ color: "white" }}>Conversas</Text>
-        <Text style={{ color: "white" }}>Status</Text>
-        <Text style={{ color: "white" }}>Chamadas</Text>
+    <View style={[styles.container]}>
+      <View style={[styles.menuWhatsapp]}>
+        <View style={[styles.tituloWhatsapp]}>
+          <Text style={[styles.tituloWhatsapp]}> Whatsapp </Text>
+        </View>
+
+        <View style={[styles.textOptions]}>
+          <Text style={[styles.textOptions]}>Conversas</Text>
+          <Text style={[styles.textOptions]}>Status</Text>
+          <Text style={[styles.textOptions]}>Chamadas</Text>
+        </View>
       </View>
 
-      <View style={{ flex: 1, backgroundColor: "white" }} />
+      <View style={[styles.todasConversas]}>
+        <View style={[styles.conversasRecentes]}>
+          <MyComponent />
+          <View style={[styles.reviewConversaContato]}>
+            <Text style={[styles.tituloNegrito]}> Jhonatas </Text>
+            <Text> Deu caso de Policia!! </Text>
+          </View>
+          <View style={[styles.reviewHoraContMensagem]}>
+            <Text style={{ color: "#09CC65" }}>11:40</Text>
+            <Badge
+              style={{
+                backgroundColor: "#09CC65",
+                paddingBottom: 5,
+              }}
+            >
+              14
+            </Badge>
+          </View>
+        </View>
+
+        <View style={[styles.conversasRecentes]}>
+          <MyComponent />
+          <View style={[styles.reviewConversaContato]}>
+            <Text style={[styles.tituloNegrito]}> Jhonatas </Text>
+            <Text> Deu caso de Policia!! </Text>
+          </View>
+          <View style={[styles.reviewHoraContMensagem]}>
+            <Text style={{ color: "#09CC65" }}>11:40</Text>
+            <Badge
+              style={{
+                backgroundColor: "#09CC65",
+                paddingBottom: 5,
+              }}
+            >
+              14
+            </Badge>
+          </View>
+        </View>
+      </View>
     </View>
   );
 };
 
+const MyComponent = () => <Avatar.Text size={60} label="KM" />;
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 20,
+    flexDirection: "column",
+  },
+
+  menuWhatsapp: {
+    flex: 0.15,
+    backgroundColor: "#065E55",
+  },
+
+  tituloWhatsapp: {
+    flexDirection: "row",
+    padding: 9,
+    color: "white",
+    fontSize: 20,
+  },
+
+  textOptions: {
+    flexDirection: "row",
+    justifyContent: "space-evenly",
+    alignItems: "flex-end",
+    color: "white",
+  },
+
+  todasConversas: {
+    flex: 1,
+    backgroundColor: "white",
+  },
+
+  conversasRecentes: {
+    flex: 0.1,
+    flexDirection: "row",
+    padding: 12,
+  },
+
+  reviewConversaContato: {
+    flex: 0.95,
+    flexDirection: "column",
+    justifyContent: "space-around",
+    paddingLeft: 10,
+  },
+
+  tituloNegrito: {
+    fontWeight: "bold",
+    fontSize: 17,
+  },
+
+  reviewHoraContMensagem: {
+    justifyContent: "space-evenly",
   },
 });
 
@@ -107,4 +184,4 @@ const styles = StyleSheet.create({
 //   );
 // };
 
-export default Flex;
+export default Whatsap;
