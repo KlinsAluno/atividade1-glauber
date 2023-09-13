@@ -20,40 +20,21 @@ const Whatsap = () => {
 
       <View style={[styles.todasConversas]}>
         <View style={[styles.conversasRecentes]}>
-          <MyComponent />
+            <conversasRecentess>
+              {Avatar="KM"}
+            <conversasRecentess/>
           <View style={[styles.reviewConversaContato]}>
-            <Text style={[styles.tituloNegrito]}> Jhonatas </Text>
-            <Text> Deu caso de Policia!! </Text>
+            <conversasRecentess>
+              {Nome="KM"}
+              {Conversa="Kkkkkk"}
+            <conversasRecentess/>
           </View>
           <View style={[styles.reviewHoraContMensagem]}>
-            <Text style={{ color: "#09CC65" }}>11:40</Text>
-            <Badge
-              style={{
-                backgroundColor: "#09CC65",
-                paddingBottom: 5,
-              }}
-            >
-              14
-            </Badge>
-          </View>
-        </View>
 
-        <View style={[styles.conversasRecentes]}>
-          <MyComponent />
-          <View style={[styles.reviewConversaContato]}>
-            <Text style={[styles.tituloNegrito]}> Jhonatas </Text>
-            <Text> Deu caso de Policia!! </Text>
-          </View>
-          <View style={[styles.reviewHoraContMensagem]}>
-            <Text style={{ color: "#09CC65" }}>11:40</Text>
-            <Badge
-              style={{
-                backgroundColor: "#09CC65",
-                paddingBottom: 5,
-              }}
-            >
-              14
-            </Badge>
+          <conversasRecentess>
+        {Badger="17"}
+        {Conversa="Kkkkkk"}
+        <conversasRecentess/>
           </View>
         </View>
       </View>
@@ -61,7 +42,25 @@ const Whatsap = () => {
   );
 };
 
-const MyComponent = () => <Avatar.Text size={60} label="KM" />;
+const conversasRecentess = (Avatar, Nome, Conversa, Hora, Badger) => {
+  return (
+    <Avatar.Text size={60} label="KM" />
+
+    <Text style={[styles.nomeTitulo]}> {Nome} </Text>
+    <Text> {Conversa} </Text>
+
+    <Text style={{ color: "#09CC65" }}>{Hora}</Text>
+
+    <Badge
+    style={{
+      backgroundColor: "#09CC65",
+      paddingBottom: 5,
+    }}
+  >
+    {Badger}
+  </Badge>
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -106,7 +105,7 @@ const styles = StyleSheet.create({
     paddingLeft: 10,
   },
 
-  tituloNegrito: {
+  nomeTitulo: {
     fontWeight: "bold",
     fontSize: 17,
   },
